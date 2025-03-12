@@ -15,8 +15,9 @@ import { JoiValidationSchema } from './config/joi.validation';
   imports: [
 
     ConfigModule.forRoot({
+      envFilePath: '.env',
       load: [EnvConfiguration],
-      validationSchema: JoiValidationSchema
+      validationSchema: JoiValidationSchema,
     }),
 
     ServeStaticModule.forRoot({
