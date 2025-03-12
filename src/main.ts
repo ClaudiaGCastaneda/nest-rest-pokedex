@@ -18,6 +18,10 @@ async function bootstrap() {
     })
   )
 
+  if (!process.env.MONGODB) {
+    throw new Error('MONGODB environment variable is not defined');
+  }
+
   await app.listen(process.env.PORT ?? 3000);
   console.log(`App running on port ${process.env.MONGODB}`)
 }
